@@ -25,9 +25,9 @@ namespace Modelo
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Usuario> Usuarios { get; set; }
-        public virtual DbSet<Perfil> Perfils { get; set; }
-        public virtual DbSet<Formulario> Formularios { get; set; }
+        public virtual DbSet<Usuarios> Usuarios1 { get; set; }
+        public virtual DbSet<Perfiles> Perfiles { get; set; }
+        public virtual DbSet<Formularios> Formularios1 { get; set; }
         public virtual DbSet<Permisos> Permisos { get; set; }
     }
 }

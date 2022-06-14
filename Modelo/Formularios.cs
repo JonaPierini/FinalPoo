@@ -12,12 +12,12 @@ namespace Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Formulario
+    public partial class Formularios
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Formulario()
+        public Formularios()
         {
-            this.Perfils = new HashSet<Perfil>();
+            this.Perfils = new HashSet<Perfiles>();
             this.Permisos = new HashSet<Permisos>();
         }
     
@@ -26,7 +26,7 @@ namespace Modelo
         public string SystemName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Perfil> Perfils { get; set; }
+        public virtual ICollection<Perfiles> Perfils { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Permisos> Permisos { get; set; }
     }

@@ -12,7 +12,7 @@ namespace Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class Usuarios
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -21,6 +21,6 @@ namespace Modelo
         public string Posswere { get; set; }
         public string PerilID { get; set; }
     
-        public virtual Perfil Perfil { get; set; }
+        public virtual Perfiles Perfil { get; set; }
     }
 }
