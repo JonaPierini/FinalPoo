@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/14/2022 19:45:30
+-- Date Created: 06/14/2022 20:19:27
 -- Generated from EDMX file: C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Modelo\Contexto.edmx
 -- --------------------------------------------------
 
@@ -17,18 +17,51 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_UsuarioPerfil]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Usuarios] DROP CONSTRAINT [FK_UsuarioPerfil];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PerfilFormulario_Perfil]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PerfilFormulario] DROP CONSTRAINT [FK_PerfilFormulario_Perfil];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PerfilFormulario_Formulario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PerfilFormulario] DROP CONSTRAINT [FK_PerfilFormulario_Formulario];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FormularioPermisos_Formulario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FormularioPermisos] DROP CONSTRAINT [FK_FormularioPermisos_Formulario];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FormularioPermisos_Permisos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FormularioPermisos] DROP CONSTRAINT [FK_FormularioPermisos_Permisos];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Usuarios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Usuarios];
+GO
+IF OBJECT_ID(N'[dbo].[Perfils]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Perfils];
+GO
+IF OBJECT_ID(N'[dbo].[Formularios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Formularios];
+GO
+IF OBJECT_ID(N'[dbo].[Permisos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Permisos];
+GO
+IF OBJECT_ID(N'[dbo].[PerfilFormulario]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PerfilFormulario];
+GO
+IF OBJECT_ID(N'[dbo].[FormularioPermisos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FormularioPermisos];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
 -- --------------------------------------------------
 
--- Creating table 'Usuarios'
-CREATE TABLE [dbo].[Usuarios] (
+-- Creating table 'Usuarios1'
+CREATE TABLE [dbo].[Usuarios1] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
     [Email] nvarchar(max)  NOT NULL,
@@ -39,15 +72,15 @@ CREATE TABLE [dbo].[Usuarios] (
 );
 GO
 
--- Creating table 'Perfils'
-CREATE TABLE [dbo].[Perfils] (
+-- Creating table 'Perfiles'
+CREATE TABLE [dbo].[Perfiles] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL
 );
 GO
 
--- Creating table 'Formularios'
-CREATE TABLE [dbo].[Formularios] (
+-- Creating table 'Formularios1'
+CREATE TABLE [dbo].[Formularios1] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
     [SystemName] nvarchar(max)  NOT NULL
@@ -80,21 +113,21 @@ GO
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
 
--- Creating primary key on [Id] in table 'Usuarios'
-ALTER TABLE [dbo].[Usuarios]
-ADD CONSTRAINT [PK_Usuarios]
+-- Creating primary key on [Id] in table 'Usuarios1'
+ALTER TABLE [dbo].[Usuarios1]
+ADD CONSTRAINT [PK_Usuarios1]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'Perfils'
-ALTER TABLE [dbo].[Perfils]
-ADD CONSTRAINT [PK_Perfils]
+-- Creating primary key on [Id] in table 'Perfiles'
+ALTER TABLE [dbo].[Perfiles]
+ADD CONSTRAINT [PK_Perfiles]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'Formularios'
-ALTER TABLE [dbo].[Formularios]
-ADD CONSTRAINT [PK_Formularios]
+-- Creating primary key on [Id] in table 'Formularios1'
+ALTER TABLE [dbo].[Formularios1]
+ADD CONSTRAINT [PK_Formularios1]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -120,18 +153,18 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [Perfil_Id] in table 'Usuarios'
-ALTER TABLE [dbo].[Usuarios]
+-- Creating foreign key on [Perfil_Id] in table 'Usuarios1'
+ALTER TABLE [dbo].[Usuarios1]
 ADD CONSTRAINT [FK_UsuarioPerfil]
     FOREIGN KEY ([Perfil_Id])
-    REFERENCES [dbo].[Perfils]
+    REFERENCES [dbo].[Perfiles]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_UsuarioPerfil'
 CREATE INDEX [IX_FK_UsuarioPerfil]
-ON [dbo].[Usuarios]
+ON [dbo].[Usuarios1]
     ([Perfil_Id]);
 GO
 
@@ -139,7 +172,7 @@ GO
 ALTER TABLE [dbo].[PerfilFormulario]
 ADD CONSTRAINT [FK_PerfilFormulario_Perfil]
     FOREIGN KEY ([Perfils_Id])
-    REFERENCES [dbo].[Perfils]
+    REFERENCES [dbo].[Perfiles]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
@@ -148,7 +181,7 @@ GO
 ALTER TABLE [dbo].[PerfilFormulario]
 ADD CONSTRAINT [FK_PerfilFormulario_Formulario]
     FOREIGN KEY ([Formularios_Id])
-    REFERENCES [dbo].[Formularios]
+    REFERENCES [dbo].[Formularios1]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
@@ -161,24 +194,24 @@ GO
 
 -- Creating foreign key on [Formularios_Id] in table 'FormularioPermisos'
 ALTER TABLE [dbo].[FormularioPermisos]
-ADD CONSTRAINT [FK_FormularioPermisos_Formulario]
+ADD CONSTRAINT [FK_FormularioPermiso_Formulario]
     FOREIGN KEY ([Formularios_Id])
-    REFERENCES [dbo].[Formularios]
+    REFERENCES [dbo].[Formularios1]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating foreign key on [Permisos_Id] in table 'FormularioPermisos'
 ALTER TABLE [dbo].[FormularioPermisos]
-ADD CONSTRAINT [FK_FormularioPermisos_Permisos]
+ADD CONSTRAINT [FK_FormularioPermiso_Permisos]
     FOREIGN KEY ([Permisos_Id])
     REFERENCES [dbo].[Permisos]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_FormularioPermisos_Permisos'
-CREATE INDEX [IX_FK_FormularioPermisos_Permisos]
+-- Creating non-clustered index for FOREIGN KEY 'FK_FormularioPermiso_Permisos'
+CREATE INDEX [IX_FK_FormularioPermiso_Permisos]
 ON [dbo].[FormularioPermisos]
     ([Permisos_Id]);
 GO
