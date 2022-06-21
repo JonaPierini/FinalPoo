@@ -1,0 +1,10 @@
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Vista\bin\Debug\Vista.exe.config
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Vista\bin\Debug\Vista.exe
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Vista\bin\Debug\Vista.pdb
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Vista\obj\Debug\Vista.csproj.SuggestedBindingRedirects.cache
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Vista\obj\Debug\Vista.exe
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Vista\obj\Debug\Vista.pdb

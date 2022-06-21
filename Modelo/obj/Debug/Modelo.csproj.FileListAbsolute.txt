@@ -1,0 +1,2 @@
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache

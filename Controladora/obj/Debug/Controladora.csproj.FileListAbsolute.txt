@@ -1,0 +1,6 @@
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Controladora\bin\Debug\Controladora.dll
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Controladora\bin\Debug\Controladora.pdb
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Controladora\obj\Debug\Controladora.csproj.AssemblyReference.cache
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Controladora\obj\Debug\Controladora.csproj.CoreCompileInputs.cache
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Controladora\obj\Debug\Controladora.dll
+C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Controladora\obj\Debug\Controladora.pdb
