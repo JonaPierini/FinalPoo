@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/21/2022 18:40:01
--- Generated from EDMX file: C:\Users\JPierini\OneDrive - ENDAVA\Desktop\POO\FinalPooDos\FinalPoo\Modelo\Contexto.edmx
+-- Date Created: 06/21/2022 19:21:13
+-- Generated from EDMX file: C:\Users\Flor\Desktop\Repo Jona\FinalPoo\Modelo\Contexto.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -66,8 +66,7 @@ CREATE TABLE [dbo].[Usuarios1] (
     [Name] nvarchar(max)  NOT NULL,
     [Email] nvarchar(max)  NOT NULL,
     [DNI] nvarchar(max)  NOT NULL,
-    [Posswere] nvarchar(max)  NOT NULL,
-    [PerilID] nvarchar(max)  NOT NULL,
+    [Password] nvarchar(max)  NOT NULL,
     [Perfil_Id] int  NOT NULL
 );
 GO
@@ -97,7 +96,7 @@ GO
 
 -- Creating table 'PerfilFormulario'
 CREATE TABLE [dbo].[PerfilFormulario] (
-    [Perfils_Id] int  NOT NULL,
+    [Perfil_Id] int  NOT NULL,
     [Formularios_Id] int  NOT NULL
 );
 GO
@@ -137,10 +136,10 @@ ADD CONSTRAINT [PK_Permisos]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Perfils_Id], [Formularios_Id] in table 'PerfilFormulario'
+-- Creating primary key on [Perfil_Id], [Formularios_Id] in table 'PerfilFormulario'
 ALTER TABLE [dbo].[PerfilFormulario]
 ADD CONSTRAINT [PK_PerfilFormulario]
-    PRIMARY KEY CLUSTERED ([Perfils_Id], [Formularios_Id] ASC);
+    PRIMARY KEY CLUSTERED ([Perfil_Id], [Formularios_Id] ASC);
 GO
 
 -- Creating primary key on [Formularios_Id], [Permisos_Id] in table 'FormularioPermisos'
@@ -168,10 +167,10 @@ ON [dbo].[Usuarios1]
     ([Perfil_Id]);
 GO
 
--- Creating foreign key on [Perfils_Id] in table 'PerfilFormulario'
+-- Creating foreign key on [Perfil_Id] in table 'PerfilFormulario'
 ALTER TABLE [dbo].[PerfilFormulario]
 ADD CONSTRAINT [FK_PerfilFormulario_Perfil]
-    FOREIGN KEY ([Perfils_Id])
+    FOREIGN KEY ([Perfil_Id])
     REFERENCES [dbo].[Perfiles]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
